@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EditeurTileSet.iml" filepath="$PROJECT_DIR$/EditeurTileSet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaAdvancedCalculator.iml" filepath="$PROJECT_DIR$/JavaAdvancedCalculator.iml" />
     </modules>
   </component>
 </project>

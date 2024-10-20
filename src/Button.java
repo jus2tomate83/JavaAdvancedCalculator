@@ -8,25 +8,35 @@ public class Button {
     Panel p;
 
     public static String texteOfArea;
+    public static String textOfAreaShowResult;
 
 
     static String[] operatorButtons = new String[] {"-", "+", "*", "/","√","^","(",")"};// Pour les opérateurs +, -, *, /
     static int[] numberButtons = new int[] {0,1,2,3,4,5,6,7,8,9};// Pour les chiffres
 
     private static JTextArea textArea;   // Déclaration de textArea pour y accéder dans update()
+    private static JTextArea textAreaShowResult;   // Déclaration de textArea pour y accéder dans update()
 
     public static void setupButton(Panel p) {
 
-        // Création de la zone d'affichage de texte (JTextArea)
+        // Création de la zone d'affichage de l'entrée utilisateur de texte (JTextArea)
         textArea = new JTextArea(10, 30);
         textArea.setEditable(false);  // Si vous voulez seulement afficher du texte, sans édition
         textArea.append("2+9*9\n");  // Ajout d'un saut de ligne pour la lisibilité
         texteOfArea = textArea.getText();
         p.add(textArea);
 
+        // Création de la zone d'affichage de sortie de texte (JTextArea)
+        textAreaShowResult = new JTextArea(10, 30);
+        textAreaShowResult.setEditable(false);  // Si vous voulez seulement afficher du texte, sans édition
+        textAreaShowResult.append("");  // Ajout d'un saut de ligne pour la lisibilité
+        textOfAreaShowResult = textAreaShowResult.getText();
+        p.add(textAreaShowResult);
+
         //ENter Button
         JButton Enter = new JButton(String.valueOf("Enter"));
         p.add(Enter);
+
         // Ajout des écouteurs d'événements aux boutons
         Enter.addActionListener(new ActionListener() {
             @Override
@@ -35,7 +45,9 @@ public class Button {
                 if(texteOfArea == ""){
                     Calculs.error("Enter void");
                 }else {
-                    System.out.println(Calculs.zoneTexteToCalculs());
+                    Sortie
+                            .setText("");
+                    textOfAreaShowResult = String.valueOf(Calculs.zoneTexteToCalculs());
                 }
             }
         });
@@ -84,9 +96,12 @@ public class Button {
         }
     }
 
-    public static void update(){
+    public static void update() {
         textArea.setText("");
         textArea.append(texteOfArea);
+
+        textAreaShowResult.setText("");
+        textAreaShowResult.append(textOfAreaShowResult);
     }
 
 

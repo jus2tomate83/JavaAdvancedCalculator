@@ -7,7 +7,7 @@ public class Main {
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(true);
-        window.setTitle("MapSetter");
+        window.setTitle("Calculator");
         window.setSize(1000, 1200);
         window.setLocation(0, 0);
 

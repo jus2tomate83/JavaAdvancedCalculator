@@ -49,7 +49,7 @@ public class Calculs {
 
             // Traiter tous les opérateurs restants dans la pile
             while (!operators.isEmpty()) {
-                // Avant d'effectuer une opération, assurez-vous qu'il y a au moins deux nombres dans la pile
+                // Avant d'effectuer une opération, assurez-vous qu'il y a au moons deux nombres dans la pile
                 if (numbers.size() >= 2 || (operators.peek() == '√' && numbers.size() >= 1)) {
                     processTopOperator(numbers, operators);
                 } else {
@@ -134,7 +134,7 @@ public class Calculs {
             switch (operator) {
                 case '+':
                 case '-':
-                    return 1;  // Priorité basse
+                    return 1;  // Priorité bass
                 case '*':
                 case '/':
                 case '√':
@@ -181,13 +181,13 @@ public class Calculs {
             System.out.println("Plus d'éléments a supprimer");
         }
         if (message == "Enter void"){
-            System.out.println("Pas de calcul possible avec une zone de texte vide !");
+            System.out.println("Pas de calc possible avec une zone de texte vide !");
         }
         if (message == "√(négatif)"){
             System.out.println("La racine carrée d'un nombre négatif n'est pas définie.");
         }
         if(message == "/OC"){
-            System.out.println("Erreur : Deux opérateurs consécutifs détectés.");
+            System.out.println("Erreur : Deux opérateurs consécutifs detects.");
         }
     }
 
