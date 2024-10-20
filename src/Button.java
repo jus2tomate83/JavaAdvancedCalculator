@@ -45,8 +45,8 @@ public class Button {
                 if(texteOfArea == ""){
                     Calculs.error("Enter void");
                 }else {
-                    Sortie
-                            .setText("");
+
+                    textAreaShowResult.setText("");
                     textOfAreaShowResult = String.valueOf(Calculs.zoneTexteToCalculs());
                 }
             }
